@@ -1,10 +1,7 @@
 function compareArrays(arr1, arr2) {
-    if (arr1.length === arr2.length) {
-      arr1.every((n, i) => n === arr2[i]);
-    } else {
-      return false;
+  return arr1.length === arr2.length && arr1.every((item, index) => item === arr2[index]);
     }
-  }
+
   compareArrays([8, 9], [6])
 
 
@@ -26,9 +23,16 @@ function compareArrays(arr1, arr2) {
   ]
 
 
-function getUsersNamesInAgeRange(users, gender) {
-    users = people.filter(users => users.gender === "мужской");
-    users.reduce((acc, item) => (acc + item.ege)/users.length , 0);
+  function getUsersNamesInAgeRange(users, gender) {
+    if (users.length > 0 && (gender === "мужской" || gender === 'женский') ){
+      users = people.filter(element => element.gender === gender);
+      users.reduce((acc, item) => acc + item.age , 0);
+    return users = (users.reduce((acc, item) => acc + item.age , 0)) / users.length;
+    } 
+
+    return 0;
+    
     }
 
+    console.log(getUsersNamesInAgeRange(people, "мужской"));
 
