@@ -24,13 +24,13 @@ function compareArrays(arr1, arr2) {
 
 
   function getUsersNamesInAgeRange(users, gender) {
-   return users.filter ( users => users.gender === gender).map(person => person.age).reduce((acc, userAge, index, arr) => {
+   return users.filter( users => users.gender === gender).map(person => person.age).reduce((acc, userAge, index, arr) => {
       if(index === arr.length - 1) {
         return acc / arr.length;
       }
-      
-      return acc + userAge;
-    })
+
+      return acc;
+    }, 0)
   
   }
     console.log(getUsersNamesInAgeRange(people, "мужской"));
