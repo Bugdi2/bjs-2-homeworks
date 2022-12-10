@@ -24,10 +24,8 @@ function compareArrays(arr1, arr2) {
 
 
   function getUsersNamesInAgeRange(users, gender) {
-  
-     let sum = users.reduce((acc, item) => acc + item.age , 0);
 
-      return 1/2 * users.filter(element => element.gender === gender).reduce((acc, item) => acc + item.age , 0);
+      return users.filter(element => element.gender === gender).reduce((acc, item) =>acc + item.age , 0);
   
     }
 
