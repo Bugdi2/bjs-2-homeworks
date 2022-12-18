@@ -26,8 +26,25 @@ class PrintEditionItem {
     get state(){
         return this.state;
     }
-    
 
+}
 
+class Magazine extends PrintEditionItem{
+    type ="magazine";
+}
 
+class Book extends PrintEditionItem{
+    type ="book";
+}
+
+class NovelBook extends Book {
+    type = "novel";
+}
+
+class FantasticBook extends Book{
+    type = "fantastic";
+}
+
+class DetectiveBook extends Book{
+    type = "detective";
 }
