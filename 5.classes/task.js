@@ -26,7 +26,7 @@ class PrintEditionItem {
     get state(){
         return this.state;
     }
-
+    
 }
 
 class Magazine extends PrintEditionItem{
@@ -47,4 +47,21 @@ class FantasticBook extends Book{
 
 class DetectiveBook extends Book{
     type = "detective";
+}
+
+class Library {
+    constructor(name){
+        this.name = name;
+        this.books = [];
+    }
+
+    addBook(book){
+        if (book.state > 30){
+            books.push(book);
+        }
+    }
+
+    findBookBy(type, value) {
+        
+    }
 }
