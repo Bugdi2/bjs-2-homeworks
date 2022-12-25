@@ -9,44 +9,61 @@ class PrintEditionItem {
     }
 
     fix (){
-        this.state = this.state * 1.5;
+        this.state = state * 1.5;
     }
 
     set state (state){
         if (state >= 100){
-            return 100;
+            this._state = 100;
         } else if ( state <= 0){
-            return 0;
+            this._state = 0;
         } else {
-            return state;
+            this._state = state;
         }
 
     }
     
     get state(){
-        return this.state;
+        return this._state;
     }
     
 }
 
 class Magazine extends PrintEditionItem{
-    type ="magazine";
+    constructor (name, releaseDate, pagesCount) {
+        super(name, releaseDate, pagesCount);
+        this.type ="magazine";
+    }
+    
 }
 
 class Book extends PrintEditionItem{
-    type ="book";
+    constructor (name, releaseDate, pagesCount, author) {
+        super(name, releaseDate, pagesCount);
+        this.author = author;
+        this.type = "book";
+    }
 }
 
 class NovelBook extends Book {
-    type = "novel";
+    constructor (name, releaseDate, pagesCount, author) {
+        super(name, releaseDate, pagesCount,author);
+        this.type = "novel";
+    }
 }
 
 class FantasticBook extends Book{
-    type = "fantastic";
+    constructor(name, releaseDate, pagesCount, author) {
+        super(name, releaseDate, pagesCount,author);
+        this.type = "fantastic";
+    }
 }
 
 class DetectiveBook extends Book{
-    type = "detective";
+    constructor (name, releaseDate, pagesCount, author) {
+        super(name, releaseDate, pagesCount, author);
+        this.type = "detective";
+    }
 }
 
 class Library {
@@ -56,7 +73,7 @@ class Library {
     }
 
     addBook(book){
-        if (book.state > 30){
+        if (book.state >= 30){
             books.push(book);
         }
     }
