@@ -72,9 +72,9 @@ class Library {
         this.books = [];
     }
 
-    addBook(PrintEditionItem){
-        if (PrintEditionItem.state >= 30){
-            books.push(PrintEditionItem);
+    addBook(book){
+        if (book.state >= 30){
+            this.books.push(book);
         }
     }
 
