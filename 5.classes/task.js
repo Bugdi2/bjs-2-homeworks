@@ -79,6 +79,34 @@ class Library {
     }
 
     findBookBy(type, value) {
-        
+        for (let i = 0; i < this.books.length; i++) {
+            if (this.books[i][type] === value) {
+                return this.books[i]                
+            }
+        }
+        return null;
+    }
+
+    giveBookByName(bookName) {
+        for (let i = 0; i < this.books.length; i++) {
+            if (this.books[i].name == bookName) {
+               let searchBook = this.books.splice(i, 1);
+               return searchBook[0];
+            }   
+        }
+        return null
+    }
+}
+
+class Student {
+    constructor(name, marks) {
+        this.name = name;
+        this.marks = {marks};
+    }
+
+    addMark(subject, mark){
+        if (mark > 2 && mark < 5){
+
+        }
     }
 }
