@@ -105,7 +105,7 @@ class Student {
     }
 
     addMark(subject, mark){
-        if (mark > 2 && mark < 5){
+        if (mark > 2 && mark < 5 && this.marks.hasOwnProperty(subject)){
 
         }
     }
