@@ -109,4 +109,12 @@ class Student {
 
         }
     }
+
+    getAverageBySubject(subject) {
+        if (subject == undefined){
+            return 0;
+        }
+        let x = subject.marks.reduce(function(a, b){ return a + b;});
+        return x/subject.marks.length;
+    }
 }
