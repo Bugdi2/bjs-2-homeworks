@@ -1,12 +1,8 @@
 class AlarmClock{
     constructor(){
         this.alarmCollection = [{
-            time: "00:00",
-            callback: () => console.log ('звонок'),
-            canCall: true,
-
         }];
-        this.intervalId === null;
+        this.intervalId = null;
     }
 
     addClock (time, callback){
@@ -23,5 +19,39 @@ class AlarmClock{
 
     removeClock(time){
         this.alarmCollection = this.alarmCollection.filter(alarm => alarm.time !== time)
+    }
+
+    getCurrentFormattedTime(){
+        return new Date().toLocaleTimeString([],{hour: "2-digit", minute: "2-digit"});
+    }
+
+    start(){
+        if (this.intervalId !== null){
+           return 0;
+        }
+
+       let x = this.alarmCollection.forEach(function(alarm){
+            if (alarm.time === new Date().toLocaleTimeString([],{hour: "2-digit", minute: "2-digit"}) && canCall === true){
+                this.alarm.canCall = false;
+                this.alarm.callback = callback();
+            }
+        });
+        this.intervalId = setInterval (x, 1000);
+
+    }
+
+    stop(){
+        clearInterval(this.intervalId);
+        intervalId = null;
+    }
+
+    resetAllCalls(){
+        this.alarmCollection.forEach(function(alarm){
+           alarm.canCall = true;
+    });
+}
+    clearAlarms(){
+        stop();
+        this.alarmCollection = [];
     }
 }
