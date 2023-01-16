@@ -1,7 +1,6 @@
 class AlarmClock{
     constructor(){
-        this.alarmCollection = [{
-        }];
+        this.alarmCollection = [];
         this.intervalId = null;
     }
 
@@ -14,7 +13,7 @@ class AlarmClock{
             console.warn('Уже присутствует звонок на это же время')
         }
 
-        this.alarmCollection.push( this.alarm = {id, time, callback, canCall: true});
+        this.alarmCollection.push(time, callback, canCall = true);
     }
 
     removeClock(time){
@@ -42,7 +41,7 @@ class AlarmClock{
 
     stop(){
         clearInterval(this.intervalId);
-        intervalId = null;
+        this.intervalId = null;
     }
 
     resetAllCalls(){
