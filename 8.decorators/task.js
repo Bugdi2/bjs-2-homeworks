@@ -1,6 +1,6 @@
 //Задача № 1
 function cachingDecoratorNew(func) {
-    let cache ={};
+    let cache =[];
     return (...args) => {
         const hash = args.join(",");
         if (hash in cache){
@@ -16,9 +16,8 @@ function cachingDecoratorNew(func) {
     }
 
     console.log("Кеш переполнен!");
+    cache.splice(1,1); // Удаление первого элемента 
     return;
-
-
     }
   
 }
